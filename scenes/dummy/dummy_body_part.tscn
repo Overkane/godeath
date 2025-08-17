@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://r3ask6dlgfh5"]
+
+[ext_resource type="Script" uid="uid://cbhv0ne78jqc1" path="res://scenes/dummy/dummy_body_part.gd" id="1_4bfta"]
+
+[node name="DummyBodyPart" type="RigidBody2D"]
+script = ExtResource("1_4bfta")

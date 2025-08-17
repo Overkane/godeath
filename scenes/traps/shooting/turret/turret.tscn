@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://du5icjqindlek"]
+
+[ext_resource type="Texture2D" uid="uid://dlttsngn6ibdk" path="res://icon.svg" id="1_lk87a"]
+[ext_resource type="Script" uid="uid://bb014efde2q4o" path="res://scenes/traps/shooting/turret/turret.gd" id="1_t4xb5"]
+[ext_resource type="PackedScene" uid="uid://d2g6k56hq1apk" path="res://scenes/traps/shooting/turret/projectile.tscn" id="2_e2kqn"]
+
+[node name="Turret" type="Node2D"]
+script = ExtResource("1_t4xb5")
+projectile_scene = ExtResource("2_e2kqn")
+
+[node name="TurretSprite" type="Sprite2D" parent="."]
+scale = Vector2(0.359375, 0.359375)
+texture = ExtResource("1_lk87a")
+
+[node name="GunMount" type="Node2D" parent="."]
+
+[node name="GunSprite" type="Sprite2D" parent="GunMount"]
+position = Vector2(17, 0)
+scale = Vector2(0.265625, 0.0625)
+texture = ExtResource("1_lk87a")
+
+[node name="ProjectileSpawnPoint" type="Marker2D" parent="GunMount"]
+position = Vector2(35, 0)
+
+[node name="ShootingCooldownTimer" type="Timer" parent="."]
+autostart = true

@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://da0jnfewi87mg"]
+
+[ext_resource type="Script" uid="uid://keqd6tht6026" path="res://scenes/spawner/dummy_spawner.gd" id="1_3ikm1"]
+[ext_resource type="PackedScene" uid="uid://dpoj4uuooirl4" path="res://scenes/dummy/dummy.tscn" id="1_vky8n"]
+[ext_resource type="PackedScene" uid="uid://b4utdi02eof0v" path="res://components/draggable/draggable.tscn" id="3_u6eat"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vky8n"]
+size = Vector2(208, 371)
+
+[node name="DummySpawner" type="Marker2D"]
+script = ExtResource("1_3ikm1")
+dummy_scene = ExtResource("1_vky8n")
+
+[node name="DummyGhost" parent="." instance=ExtResource("1_vky8n")]
+process_mode = 4
+visible = false
+
+[node name="BuildableArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 7
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BuildableArea"]
+position = Vector2(0, 111.5)
+shape = SubResource("RectangleShape2D_vky8n")
+
+[node name="Draggable" parent="." instance=ExtResource("3_u6eat")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Draggable"]
+position = Vector2(0, 111.5)
+shape = SubResource("RectangleShape2D_vky8n")

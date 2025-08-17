@@ -1,0 +1,149 @@
+[gd_scene load_steps=5 format=3 uid="uid://dpoj4uuooirl4"]
+
+[ext_resource type="Texture2D" uid="uid://dlttsngn6ibdk" path="res://icon.svg" id="1_cyamk"]
+[ext_resource type="Script" uid="uid://ba3hpgy8fh2da" path="res://scenes/dummy/dummy.gd" id="1_n71qq"]
+[ext_resource type="Script" uid="uid://cbhv0ne78jqc1" path="res://scenes/dummy/dummy_body_part.gd" id="2_dlff5"]
+[ext_resource type="PackedScene" uid="uid://d3ujfkgcnld06" path="res://components/health/health.tscn" id="3_xqvh8"]
+
+[node name="Dummy" type="Node2D" node_paths=PackedStringArray("health_component") groups=["dummy"]]
+script = ExtResource("1_n71qq")
+health_component = NodePath("Components/Health")
+
+[node name="Head" type="RigidBody2D" parent="."]
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("2_dlff5")
+metadata/_custom_type_script = "uid://cbhv0ne78jqc1"
+
+[node name="Sprite2D" type="Sprite2D" parent="Head"]
+texture = ExtResource("1_cyamk")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Head"]
+polygon = PackedVector2Array(59.1, -64, -59, -64, -63.8, -59, -64, 61, -60.3, 64, 59.6, 64, 63.9, 59, 64, -61.1)
+
+[node name="Body" type="RigidBody2D" parent="."]
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("2_dlff5")
+metadata/_custom_type_script = "uid://cbhv0ne78jqc1"
+
+[node name="Sprite2D" type="Sprite2D" parent="Body"]
+position = Vector2(-3.8147e-06, 125)
+scale = Vector2(0.296875, 0.992188)
+texture = ExtResource("1_cyamk")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Body"]
+position = Vector2(-3.8147e-06, 125)
+scale = Vector2(0.296875, 0.992188)
+polygon = PackedVector2Array(59.1, -64, -59, -64, -63.8, -59, -64, 61, -60.3, 64, 59.6, 64, 63.9, 59, 64, -61.1)
+
+[node name="HitSpotBody" type="Marker2D" parent="Body"]
+unique_name_in_owner = true
+position = Vector2(0, 125)
+
+[node name="LeftHand" type="RigidBody2D" parent="."]
+position = Vector2(1, 3)
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("2_dlff5")
+metadata/_custom_type_script = "uid://cbhv0ne78jqc1"
+
+[node name="Sprite2D" type="Sprite2D" parent="LeftHand"]
+position = Vector2(-49, 97)
+rotation = 2.01203
+scale = Vector2(0.182339, 0.609398)
+texture = ExtResource("1_cyamk")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="LeftHand"]
+position = Vector2(-49, 97)
+rotation = 2.01203
+scale = Vector2(0.182339, 0.609398)
+polygon = PackedVector2Array(59.1, -64, -59, -64, -63.8, -59, -64, 61, -60.3, 64, 59.6, 64, 63.9, 59, 64, -61.1)
+
+[node name="RightHand" type="RigidBody2D" parent="."]
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("2_dlff5")
+metadata/_custom_type_script = "uid://cbhv0ne78jqc1"
+
+[node name="Sprite2D" type="Sprite2D" parent="RightHand"]
+position = Vector2(54, 94)
+rotation = -2.19221
+scale = Vector2(0.160132, 0.755391)
+texture = ExtResource("1_cyamk")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RightHand"]
+position = Vector2(54, 94)
+rotation = -2.19221
+scale = Vector2(0.160132, 0.755391)
+polygon = PackedVector2Array(59.1, -64, -59, -64, -63.8, -59, -64, 61, -60.3, 64, 59.6, 64, 63.9, 59, 64, -61.1)
+
+[node name="LeftLeg" type="RigidBody2D" parent="."]
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("2_dlff5")
+metadata/_custom_type_script = "uid://cbhv0ne78jqc1"
+
+[node name="Sprite2D" type="Sprite2D" parent="LeftLeg"]
+position = Vector2(-33, 230)
+rotation = 0.426251
+scale = Vector2(0.296875, 0.992188)
+texture = ExtResource("1_cyamk")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="LeftLeg"]
+position = Vector2(-33, 230)
+rotation = 0.426251
+scale = Vector2(0.296875, 0.992188)
+polygon = PackedVector2Array(59.1, -64, -59, -64, -63.8, -59, -64, 61, -60.3, 64, 59.6, 64, 63.9, 59, 64, -61.1)
+
+[node name="RightLeg" type="RigidBody2D" parent="."]
+position = Vector2(-146, 88)
+rotation = -1.09235
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("2_dlff5")
+metadata/_custom_type_script = "uid://cbhv0ne78jqc1"
+
+[node name="Sprite2D" type="Sprite2D" parent="RightLeg"]
+position = Vector2(-33, 230)
+rotation = 0.426251
+scale = Vector2(0.296875, 0.992188)
+texture = ExtResource("1_cyamk")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RightLeg"]
+position = Vector2(-33, 230)
+rotation = 0.426251
+scale = Vector2(0.296875, 0.992188)
+polygon = PackedVector2Array(59.1, -64, -59, -64, -63.8, -59, -64, 61, -60.3, 64, 59.6, 64, 63.9, 59, 64, -61.1)
+
+[node name="Joints" type="Node2D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="HeadBody" type="PinJoint2D" parent="Joints"]
+position = Vector2(0, 62)
+node_a = NodePath("../../Head")
+node_b = NodePath("../../Body")
+
+[node name="BodyLeftHand" type="PinJoint2D" parent="Joints"]
+position = Vector2(-18, 112)
+node_a = NodePath("../../Body")
+node_b = NodePath("../../LeftHand")
+
+[node name="BodyRightHand" type="PinJoint2D" parent="Joints"]
+position = Vector2(19, 112)
+node_a = NodePath("../../Body")
+node_b = NodePath("../../RightHand")
+
+[node name="BodyLeftLeg" type="PinJoint2D" parent="Joints"]
+position = Vector2(-10, 180)
+node_a = NodePath("../../Body")
+node_b = NodePath("../../LeftLeg")
+
+[node name="BodyRightLeg" type="PinJoint2D" parent="Joints"]
+position = Vector2(13, 180)
+node_a = NodePath("../../Body")
+node_b = NodePath("../../RightLeg")
+
+[node name="Components" type="Node2D" parent="."]
+
+[node name="Health" parent="Components" instance=ExtResource("3_xqvh8")]
