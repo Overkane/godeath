@@ -14,11 +14,15 @@ func _ready() -> void:
 
 func hit(amount: int):
 	health_component.take_damage(amount)
+	GameManager.godocoins_amount += amount
+	HUD.update_godocoins(GameManager.godocoins_amount)
 
 func get_hit_spot() -> Marker2D:
 	return hit_spot_body
 
 
 func _die() -> void:
-	queue_free()
+	GameManager.deaths_amount += 1
+	HUD.update_deaths(GameManager.deaths_amount)
 	died.emit()
+	queue_free()

@@ -1,0 +1,37 @@
+[gd_scene load_steps=3 format=3 uid="uid://dyy2huo6o7pyj"]
+
+[ext_resource type="Script" uid="uid://bfflajwaes6y5" path="res://autoloads/hud.gd" id="1_4d6w6"]
+[ext_resource type="Texture2D" uid="uid://d4ke083r7ma34" path="res://icon.svg" id="1_xmswo"]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_4d6w6")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="GodocoinsContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="GodocoinsIcon" type="TextureRect" parent="VBoxContainer/GodocoinsContainer"]
+layout_mode = 2
+texture = ExtResource("1_xmswo")
+expand_mode = 2
+
+[node name="GodocoinsAmountLabel" type="Label" parent="VBoxContainer/GodocoinsContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "9999999"
+
+[node name="DeathsContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="DeathsIcon" type="TextureRect" parent="VBoxContainer/DeathsContainer"]
+layout_mode = 2
+texture = ExtResource("1_xmswo")
+expand_mode = 2
+
+[node name="DeathsAmountLabel" type="Label" parent="VBoxContainer/DeathsContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "9999999"
