@@ -11,5 +11,9 @@ var _current_health: int = _max_health:
 			died.emit()
 
 
+func _ready() -> void:
+	_current_health = _max_health
+
+
 func take_damage(amount: int) -> void:
 	_current_health -= amount

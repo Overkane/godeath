@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dpoj4uuooirl4"]
 
-[ext_resource type="Texture2D" uid="uid://dlttsngn6ibdk" path="res://icon.svg" id="1_cyamk"]
+[ext_resource type="Texture2D" uid="uid://d4ke083r7ma34" path="res://icon.svg" id="1_cyamk"]
 [ext_resource type="Script" uid="uid://ba3hpgy8fh2da" path="res://scenes/dummy/dummy.gd" id="1_n71qq"]
 [ext_resource type="Script" uid="uid://cbhv0ne78jqc1" path="res://scenes/dummy/dummy_body_part.gd" id="2_dlff5"]
 [ext_resource type="PackedScene" uid="uid://d3ujfkgcnld06" path="res://components/health/health.tscn" id="3_xqvh8"]
@@ -147,3 +147,4 @@ node_b = NodePath("../../RightLeg")
 [node name="Components" type="Node2D" parent="."]
 
 [node name="Health" parent="Components" instance=ExtResource("3_xqvh8")]
+_max_health = 2
