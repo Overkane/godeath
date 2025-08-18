@@ -12,7 +12,7 @@ var can_shoot := false
 
 func _ready() -> void:
 	shooting_cooldown_timer.timeout.connect(func(): can_shoot = true)
-	shooting_cooldown_timer.wait_time = shooting_cooldown
+	shooting_cooldown_timer.start(shooting_cooldown)
 
 func _physics_process(delta: float) -> void:
 	if GameManager.dummy != null:
@@ -24,6 +24,7 @@ func _physics_process(delta: float) -> void:
 
 func _shoot() -> void:
 	can_shoot = false
+	shooting_cooldown_timer.start(shooting_cooldown)
 	var projectile: Projectile = projectile_scene.instantiate()
 	add_child(projectile)
 	projectile.setup(projectile_spawn_point.global_position, Vector2.RIGHT.rotated(gun_mount.rotation))

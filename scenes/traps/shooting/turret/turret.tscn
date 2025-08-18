@@ -23,4 +23,4 @@ texture = ExtResource("1_lk87a")
 position = Vector2(35, 0)
 
 [node name="ShootingCooldownTimer" type="Timer" parent="."]
-autostart = true
+one_shot = true
