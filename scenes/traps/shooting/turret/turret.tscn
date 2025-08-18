@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://du5icjqindlek"]
 
-[ext_resource type="Texture2D" uid="uid://dlttsngn6ibdk" path="res://icon.svg" id="1_lk87a"]
+[ext_resource type="Texture2D" uid="uid://d4ke083r7ma34" path="res://icon.svg" id="1_lk87a"]
 [ext_resource type="Script" uid="uid://bb014efde2q4o" path="res://scenes/traps/shooting/turret/turret.gd" id="1_t4xb5"]
 [ext_resource type="PackedScene" uid="uid://d2g6k56hq1apk" path="res://scenes/traps/shooting/turret/projectile.tscn" id="2_e2kqn"]
 
@@ -24,3 +24,5 @@ position = Vector2(35, 0)
 
 [node name="ShootingCooldownTimer" type="Timer" parent="."]
 one_shot = true
+
+[node name="Camera2D" type="Camera2D" parent="."]

@@ -2,13 +2,13 @@ class_name AvailabilityGrid
 extends TileMapLayer
 
 enum TILE_TYPE {
+	CANT_BUILD,
 	CAN_BUILD,
-	CANT_BUILD
 }
 
 const EMPTY_TILE_COORDS := Vector2i(-1, -1)
 
-var tile_mapping: Dictionary[TILE_TYPE, Vector2] = {
+static var tile_mapping: Dictionary[TILE_TYPE, Vector2i] = {
 	TILE_TYPE.CANT_BUILD: Vector2(0, 4),
 	TILE_TYPE.CAN_BUILD: Vector2(1, 4),
 }
