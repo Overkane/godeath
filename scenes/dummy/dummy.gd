@@ -26,5 +26,6 @@ func get_hit_spot() -> Marker2D:
 func _on_died() -> void:
 	if is_dead:
 		return
+	is_dead = true
 	died.emit()
 	queue_free()
