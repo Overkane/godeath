@@ -18,7 +18,7 @@
    xmlns:svg="http://www.w3.org/2000/svg">
   <sodipodi:namedview
      id="namedview1"
-     pagecolor="#ffffff"
+     pagecolor="#000000"
      bordercolor="#000000"
      borderopacity="0.25"
      inkscape:showpageshadow="2"
@@ -27,9 +27,9 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="px"
      showgrid="true"
-     inkscape:zoom="2.8284271"
-     inkscape:cx="142.12846"
-     inkscape:cy="125.68823"
+     inkscape:zoom="7.9999999"
+     inkscape:cx="45.3125"
+     inkscape:cy="299.4375"
      inkscape:window-width="1920"
      inkscape:window-height="1008"
      inkscape:window-x="0"
@@ -53,6 +53,17 @@
   </sodipodi:namedview>
   <defs
      id="defs1">
+    <inkscape:path-effect
+       effect="offset"
+       id="path-effect1"
+       is_visible="true"
+       lpeversion="1.3"
+       linejoin_type="miter"
+       unit="px"
+       offset="-0.75"
+       miter_limit="4"
+       attempt_force_join="false"
+       update_on_knot_move="true" />
     <inkscape:path-effect
        effect="offset"
        id="path-effect59"
@@ -104,7 +115,7 @@
        lpeversion="1.3"
        linejoin_type="miter"
        unit="px"
-       offset="4"
+       offset="-4"
        miter_limit="4"
        attempt_force_join="false"
        update_on_knot_move="true" />
@@ -215,6 +226,17 @@
          offset="0"
          id="stop19" />
     </linearGradient>
+    <inkscape:path-effect
+       effect="offset"
+       id="path-effect1-7"
+       is_visible="true"
+       lpeversion="1.3"
+       linejoin_type="miter"
+       unit="px"
+       offset="-0.75"
+       miter_limit="4"
+       attempt_force_join="false"
+       update_on_knot_move="true" />
   </defs>
   <g
      inkscape:label="Box"
@@ -240,7 +262,7 @@
        sodipodi:nodetypes="ccccccccccccc" />
     <path
        style="font-variation-settings:normal;opacity:1;fill:none;fill-opacity:1;stroke:#29a5fe;stroke-width:8;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke"
-       d="M 156,0 V 36 H 256"
+       d="m 256,36 h -96 l -4,-4 V 0"
        id="path50"
        inkscape:path-effect="#path-effect52"
        inkscape:original-d="M 256,32 H 160 V 0"
@@ -250,5 +272,26 @@
        d="M 100,0 V 100 H 36 v 56 h 128 v 64 h 56 V 92 h 36 v 0 0 0"
        id="path56"
        sodipodi:nodetypes="cccccccccccc" />
+    <path
+       style="fill:#fe3b4b;stroke:#ffffff;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke;fill-opacity:0.5"
+       id="rect1"
+       width="64"
+       height="64"
+       x="0"
+       y="256"
+       sodipodi:type="rect"
+       d="m 0.75976562,256.75977 v 62.48046 H 63.240234 v -62.48046 z"
+       inkscape:path-effect="#path-effect1" />
+    <path
+       style="fill:#1afe68;fill-opacity:0.5;stroke:#ffffff;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
+       id="rect1-5"
+       width="64"
+       height="64"
+       x="0"
+       y="256"
+       sodipodi:type="rect"
+       d="m 0.75976562,256.75977 v 62.48046 H 63.240234 v -62.48046 z"
+       inkscape:path-effect="#path-effect1-7"
+       transform="translate(64)" />
   </g>
 </svg>
