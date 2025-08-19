@@ -14,9 +14,10 @@ static var tile_mapping: Dictionary[TILE_TYPE, Vector2i] = {
 }
 
 
-func show_for(walls_grid: TileMapLayer) ->  void:
+func show_for(walls_grid: TileMapLayer, bulding_grid: TileMapLayer) ->  void:
 	var playable_area_rect := walls_grid.get_used_rect()
 	var wall_positions := walls_grid.get_used_cells()
+	var build_positions := bulding_grid.get_used_cells()
 
 	for i in playable_area_rect.end.x:
 		for j in playable_area_rect.end.y:
@@ -29,7 +30,7 @@ func show_for(walls_grid: TileMapLayer) ->  void:
 				if wall_positions.has(neighbour):
 					is_wall_nearby = true
 					break
-			var tile_type = TILE_TYPE.CAN_BUILD if is_wall_nearby else TILE_TYPE.CANT_BUILD
+			var tile_type = TILE_TYPE.CAN_BUILD if is_wall_nearby and not build_positions.has(tile_pos) else TILE_TYPE.CANT_BUILD
 			set_cell(tile_pos, 0, tile_mapping.get(tile_type))
 
 	_calculate_tiles()
