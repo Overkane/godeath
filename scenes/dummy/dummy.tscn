@@ -60,6 +60,9 @@ rotation = 2.01203
 scale = Vector2(0.182339, 0.609398)
 polygon = PackedVector2Array(59.1, -64, -59, -64, -63.8, -59, -64, 61, -60.3, 64, 59.6, 64, 63.9, 59, 64, -61.1)
 
+[node name="LeftHandForcePoint" type="Marker2D" parent="LeftHand"]
+unique_name_in_owner = true
+
 [node name="RightHand" type="RigidBody2D" parent="."]
 collision_layer = 2
 collision_mask = 3
@@ -78,6 +81,9 @@ rotation = -2.19221
 scale = Vector2(0.160132, 0.755391)
 polygon = PackedVector2Array(59.1, -64, -59, -64, -63.8, -59, -64, 61, -60.3, 64, 59.6, 64, 63.9, 59, 64, -61.1)
 
+[node name="RightHandForcePoint" type="Marker2D" parent="RightHand"]
+unique_name_in_owner = true
+
 [node name="LeftLeg" type="RigidBody2D" parent="."]
 collision_layer = 2
 collision_mask = 3
@@ -95,6 +101,9 @@ position = Vector2(-33, 230)
 rotation = 0.426251
 scale = Vector2(0.296875, 0.992188)
 polygon = PackedVector2Array(59.1, -64, -59, -64, -63.8, -59, -64, 61, -60.3, 64, 59.6, 64, 63.9, 59, 64, -61.1)
+
+[node name="LeftLegForcePoint" type="Marker2D" parent="LeftLeg"]
+unique_name_in_owner = true
 
 [node name="RightLeg" type="RigidBody2D" parent="."]
 position = Vector2(-146, 88)
@@ -116,6 +125,9 @@ rotation = 0.426251
 scale = Vector2(0.296875, 0.992188)
 polygon = PackedVector2Array(59.1, -64, -59, -64, -63.8, -59, -64, 61, -60.3, 64, 59.6, 64, 63.9, 59, 64, -61.1)
 
+[node name="RightLegForcePoint" type="Marker2D" parent="RightLeg"]
+unique_name_in_owner = true
+
 [node name="Joints" type="Node2D" parent="."]
 metadata/_edit_lock_ = true
 
@@ -123,6 +135,8 @@ metadata/_edit_lock_ = true
 position = Vector2(0, 62)
 node_a = NodePath("../../Head")
 node_b = NodePath("../../Body")
+angular_limit_enabled = true
+angular_limit_upper = 0.436332
 
 [node name="BodyLeftHand" type="PinJoint2D" parent="Joints"]
 position = Vector2(-18, 112)
@@ -147,4 +161,4 @@ node_b = NodePath("../../RightLeg")
 [node name="Components" type="Node2D" parent="."]
 
 [node name="Health" parent="Components" instance=ExtResource("3_xqvh8")]
-_max_health = 2
+_max_health = 5
