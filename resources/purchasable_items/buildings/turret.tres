@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Building" load_steps=2 format=3 uid="uid://dq1vs4l726ngo"]
+
+[ext_resource type="Script" uid="uid://yks00ur2r6od" path="res://resources/purchasable_items/buildings/building.gd" id="1_dv12n"]
+
+[resource]
+script = ExtResource("1_dv12n")
+item_name = "Turret"
+item_description = "Shoots projectiles."
+death_requirement = 0
+godocoins_cost = 5
+metadata/_custom_type_script = "uid://yks00ur2r6od"

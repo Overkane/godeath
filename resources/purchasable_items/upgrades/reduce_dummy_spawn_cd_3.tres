@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Upgrade" load_steps=2 format=3 uid="uid://c2pcdeux7aoh5"]
+
+[ext_resource type="Script" uid="uid://dmx52mv6kbqlw" path="res://resources/purchasable_items/upgrades/upgrade.gd" id="1_q8eu3"]
+
+[resource]
+script = ExtResource("1_q8eu3")
+upgrade_type = 7
+item_name = "Reduce Dummy Spawn CD"
+item_description = "Reduces dummy spawn cooldown by 1.0."
+death_requirement = 111
+godocoins_cost = 600
+metadata/_custom_type_script = "uid://dmx52mv6kbqlw"

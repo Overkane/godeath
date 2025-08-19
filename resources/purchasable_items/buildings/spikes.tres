@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Building" load_steps=2 format=3 uid="uid://gv7m203dqmm0"]
+
+[ext_resource type="Script" uid="uid://yks00ur2r6od" path="res://resources/purchasable_items/buildings/building.gd" id="1_87rgm"]
+
+[resource]
+script = ExtResource("1_87rgm")
+building_type = 1
+item_name = "Spikes"
+item_description = "Pins dummy."
+death_requirement = 15
+godocoins_cost = 10
+metadata/_custom_type_script = "uid://yks00ur2r6od"

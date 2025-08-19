@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Upgrade" load_steps=2 format=3 uid="uid://bs8rtgn3q6nij"]
+
+[ext_resource type="Script" uid="uid://dmx52mv6kbqlw" path="res://resources/purchasable_items/upgrades/upgrade.gd" id="1_4xjyk"]
+
+[resource]
+script = ExtResource("1_4xjyk")
+upgrade_type = 3
+item_name = "Dummy Upgrade"
+item_description = "Upgrades dummy stat by XX."
+death_requirement = 20
+godocoins_cost = 10
+metadata/_custom_type_script = "uid://dmx52mv6kbqlw"
