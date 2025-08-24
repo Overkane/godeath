@@ -1,0 +1,21 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://btox0yr8bvxkp"]
+
+[ext_resource type="FontFile" uid="uid://c0n4r8u5mafbg" path="res://assets/font/Slackey/Slackey-Regular.ttf" id="1_mwhd1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mwhd1"]
+content_margin_left = 14.0
+content_margin_top = 14.0
+content_margin_right = 14.0
+content_margin_bottom = 14.0
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_color = Color(0.509804, 0, 0, 0.6)
+shadow_size = 20
+
+[resource]
+default_font = ExtResource("1_mwhd1")
+default_font_size = 20
+TooltipPanel/styles/panel = SubResource("StyleBoxFlat_mwhd1")

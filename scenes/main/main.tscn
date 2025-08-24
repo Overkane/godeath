@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://ie5jxn8ew6ds"]
+[gd_scene load_steps=16 format=4 uid="uid://ie5jxn8ew6ds"]
 
 [ext_resource type="Material" uid="uid://cmbcfxlkxxnwq" path="res://addons/TileMapDual/ghost_material.tres" id="1_iuonh"]
 [ext_resource type="Script" uid="uid://ck2hggmjl8rvi" path="res://scenes/main/main.gd" id="1_ow5a4"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cupro5qusqvtp" path="res://assets/tileset/tileset.png" id="2_l3cfh"]
 [ext_resource type="PackedScene" uid="uid://da0jnfewi87mg" path="res://scenes/spawner/dummy_spawner.tscn" id="4_l3cfh"]
 [ext_resource type="Script" uid="uid://b8ueethejw2k1" path="res://scenes/main/availability_grid.gd" id="5_hujxm"]
+[ext_resource type="PackedScene" uid="uid://bjddw5g4f37gs" path="res://scenes/traps/static/spikes/spikes.tscn" id="7_b1x3f"]
 [ext_resource type="PackedScene" uid="uid://dyy2huo6o7pyj" path="res://ui/hud/hud.tscn" id="7_hujxm"]
 [ext_resource type="PackedScene" uid="uid://du5icjqindlek" path="res://scenes/traps/shooting/turret/turret.tscn" id="8_yyfjg"]
 
@@ -150,6 +151,7 @@ sources/0 = SubResource("TileSetAtlasSource_ow5a4")
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_b1x3f"]
 resource_name = "Traps"
 scenes/0/scene = ExtResource("8_yyfjg")
+scenes/1/scene = ExtResource("7_b1x3f")
 
 [sub_resource type="TileSet" id="TileSet_a8run"]
 tile_size = Vector2i(64, 64)

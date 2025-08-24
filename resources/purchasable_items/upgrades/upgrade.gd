@@ -19,6 +19,7 @@ static var upgrade_functions: Dictionary[UpgradeType, Callable] = {
 	UpgradeType.ADD_DUMMY2: add_dummy_2,
 }
 
+
 static func add_dummy_1():
 	print("1")
 
