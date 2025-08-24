@@ -26,5 +26,5 @@ func _shoot() -> void:
 	can_shoot = false
 	shooting_cooldown_timer.start(shooting_cooldown)
 	var projectile: Projectile = projectile_scene.instantiate()
-	add_child(projectile)
+	get_tree().root.add_child(projectile)
 	projectile.setup(projectile_spawn_point.global_position, Vector2.RIGHT.rotated(gun_mount.rotation))
