@@ -3,7 +3,7 @@ extends Node2D
 signal bad_ending_triggered
 signal good_ending_triggered
 
-const DEATHS_AMOUNT_TO_WIN := 1_000_000
+const DEATHS_AMOUNT_TO_WIN := 1000
 const BUILDINGS_SOURCE_ID := 0
 
 var deaths_amount: int = 0:
@@ -31,15 +31,22 @@ var tile_prices: Dictionary[Vector2i, int]
 @onready var ghost_building_container: Node2D = %GhostBuildingContainer
 @onready var sell_sfx: AudioStreamPlayer = $Game/SellSFX
 @onready var build_sfx: AudioStreamPlayer = $Game/BuildSFX
+@onready var peace_timer: Timer = $Game/PeaceTimer
+@onready var game: Node2D = $Game
+@onready var ending_player: AnimationPlayer = $EndingPlayer
 
 
 func _ready() -> void:
 	dummy_spawner.dummy_died.connect(_on_dummy_died)
 	dummy_spawner.dummy_took_damage.connect(_on_dummy_took_damage)
+	peace_timer.timeout.connect(func(): good_ending_triggered.emit())
 	GameManager.building_button_pressed.connect(_on_building_button_pressed)
 
 	GameManager.deaths_amount_changed.emit(deaths_amount)
 	GameManager.godocoins_amount_changed.emit(godocoins_amount)
+
+	good_ending_triggered.connect(_start_good_ending)
+	bad_ending_triggered.connect(_start_bad_ending)
 
 func _physics_process(delta: float) -> void:
 	var grid_coords := availability_grid.local_to_map(get_global_mouse_position())
@@ -70,6 +77,14 @@ func _input(event: InputEvent) -> void:
 		availability_grid.hide()
 
 
+func _start_good_ending() -> void:
+	game.process_mode = PROCESS_MODE_DISABLED
+	ending_player.play(&"good_ending")
+
+func _start_bad_ending() -> void:
+	game.process_mode = PROCESS_MODE_DISABLED
+	ending_player.play(&"bad_ending")
+
 func _on_building_button_pressed(building: Building) -> void:
 	is_in_building_mode = true
 	current_building_type = building.building_type
@@ -86,6 +101,8 @@ func _get_scene_path_from_tilemap(building_type: Building.BuildingType) -> Packe
 	return tile_set_source.get_scene_tile_scene(building_type)
 
 func _on_dummy_took_damage(amount: int) -> void:
+	if not peace_timer.is_stopped():
+		peace_timer.stop()
 	godocoins_amount += amount
 
 func _on_dummy_died() -> void:

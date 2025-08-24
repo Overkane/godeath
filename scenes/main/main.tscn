@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://ie5jxn8ew6ds"]
+[gd_scene load_steps=35 format=4 uid="uid://ie5jxn8ew6ds"]
 
 [ext_resource type="Material" uid="uid://cmbcfxlkxxnwq" path="res://addons/TileMapDual/ghost_material.tres" id="1_iuonh"]
 [ext_resource type="Script" uid="uid://ck2hggmjl8rvi" path="res://scenes/main/main.gd" id="1_ow5a4"]
@@ -12,6 +12,15 @@
 [ext_resource type="AudioStream" uid="uid://bhupuvohet8oc" path="res://assets/music/urban_shop_bpm92.mp3" id="10_a8run"]
 [ext_resource type="AudioStream" uid="uid://dfslcw1v044bf" path="res://assets/sfx/sell.wav" id="11_ouso4"]
 [ext_resource type="AudioStream" uid="uid://lthxnae81ets" path="res://assets/sfx/build.wav" id="12_blune"]
+[ext_resource type="AudioStream" uid="uid://bvbbphrarlw40" path="res://assets/music/Almost Bliss.mp3" id="13_raeie"]
+[ext_resource type="Texture2D" uid="uid://b7mtja18ymkp3" path="res://assets/visuals/godot_f.png" id="13_th5th"]
+[ext_resource type="FontFile" uid="uid://dxtbtp8uu4dr8" path="res://assets/fonts/Orbitron/Orbitron-VariableFont_wght.ttf" id="14_7smn1"]
+[ext_resource type="AudioStream" uid="uid://cs0im6t6t1ev1" path="res://assets/sfx/robovoice1.wav" id="14_necax"]
+[ext_resource type="AudioStream" uid="uid://bmwbs7402gced" path="res://assets/music/Dopplerette.mp3" id="14_pg34l"]
+[ext_resource type="AudioStream" uid="uid://b3joscrt3s7ul" path="res://assets/sfx/robovoice2.wav" id="15_r4lks"]
+[ext_resource type="AudioStream" uid="uid://bkqhlcdmqhh21" path="res://assets/sfx/robovoice3.wav" id="16_pg34l"]
+[ext_resource type="AudioStream" uid="uid://70yauhvbgana" path="res://assets/sfx/robovoice4.wav" id="17_m4h2d"]
+[ext_resource type="AudioStream" uid="uid://dt2ekh477dwf5" path="res://assets/sfx/395378__skylar1146__machinepoweroff.wav" id="18_r4lks"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6q06x"]
 texture = ExtResource("2_l3cfh")
@@ -170,8 +179,414 @@ random_pitch = 1.25
 streams_count = 1
 stream_0/stream = ExtResource("12_blune")
 
+[sub_resource type="Animation" id="Animation_blune"]
+resource_name = "good_ending"
+length = 20.0
+step = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Fader:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0666666, 2.06667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayerForEnding/GoodEnding:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 15, 18),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayerForEnding/GodotTalkLabel:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 8.86667, 9.13333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": ["Thank you for not hurting me,
+even if the game told you to do so.", "", "You are a good person."]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CanvasLayerForEnding/GodotTalkLabel:visible_ratio")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 3, 6, 8.86667, 9.13333, 11),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, 1.0, 1.0, 0.0, 1.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CanvasLayerForEnding/GodotTalkLabel:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(7.86667, 8.9, 9, 12.5, 13.7333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Music/MainMusic:volume_db")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-10.0, -70.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Music/GoodEndingMusic:volume_db")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
+tracks/7/type = "method"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Music/GoodEndingMusic")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(15),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [0.0],
+"method": &"play"
+}]
+}
+tracks/8/type = "method"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("SFX/RobotVoice")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(3, 3.29303, 3.61491, 4, 4.5, 5, 5.5, 9.5, 9.7553, 10, 10.5, 11),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"values": [{
+"args": [0.0],
+"method": &"play"
+}, {
+"args": [0.0],
+"method": &"play"
+}, {
+"args": [0.0],
+"method": &"play"
+}, {
+"args": [0.0],
+"method": &"play"
+}, {
+"args": [0.0],
+"method": &"play"
+}, {
+"args": [0.0],
+"method": &"play"
+}, {
+"args": [0.0],
+"method": &"play"
+}, {
+"args": [0.0],
+"method": &"play"
+}, {
+"args": [0.0],
+"method": &"play"
+}, {
+"args": [0.0],
+"method": &"play"
+}, {
+"args": [0.0],
+"method": &"play"
+}, {
+"args": [0.0],
+"method": &"play"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_th5th"]
+resource_name = "bad_ending"
+length = 50.0
+step = 0.5
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SFX/TurnOff")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [0.0],
+"method": &"play"
+}]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/Fader:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Music/MainMusic:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CanvasLayerForEnding/GodotTalkLabel:text")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["You have won.
+But was it worth it?"]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CanvasLayerForEnding/GodotTalkLabel:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 7, 8, 10),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("CanvasLayerForEnding/BadEnding:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 11, 11.5, 41.9387, 42),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("CanvasLayerForEnding/GodotTalkLabel:visible_ratio")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(3, 4.5, 5.38302, 7),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.4, 0.4, 1.0]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Music/BadEndingMusic:playing")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_7smn1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Fader:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayerForEnding/GoodEnding:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayerForEnding/GodotTalkLabel:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [""]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CanvasLayerForEnding/GodotTalkLabel:visible_ratio")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CanvasLayerForEnding/GodotTalkLabel:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Music/MainMusic:volume_db")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-10.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Music/GoodEndingMusic:volume_db")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-10.0]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Music/MainMusic:playing")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("CanvasLayerForEnding/BadEnding:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Music/BadEndingMusic:playing")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7smn1"]
+_data = {
+&"RESET": SubResource("Animation_7smn1"),
+&"bad_ending": SubResource("Animation_th5th"),
+&"good_ending": SubResource("Animation_blune")
+}
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_raeie"]
+random_pitch = 1.25
+streams_count = 4
+stream_0/stream = ExtResource("14_necax")
+stream_1/stream = ExtResource("15_r4lks")
+stream_2/stream = ExtResource("16_pg34l")
+stream_3/stream = ExtResource("17_m4h2d")
+
 [node name="Main" type="Node2D"]
 script = ExtResource("1_ow5a4")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="Fader" type="ColorRect" parent="CanvasLayer"]
+z_index = -1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0)
 
 [node name="Game" type="Node2D" parent="."]
 
@@ -219,13 +634,102 @@ render_target_update_mode = 0
 unique_name_in_owner = true
 modulate = Color(0.356863, 1, 1, 0.533333)
 
-[node name="MainMusic" type="AudioStreamPlayer" parent="Game"]
-stream = ExtResource("10_a8run")
-volume_db = -10.0
-autoplay = true
-
 [node name="SellSFX" type="AudioStreamPlayer" parent="Game"]
 stream = SubResource("AudioStreamRandomizer_th5th")
 
 [node name="BuildSFX" type="AudioStreamPlayer" parent="Game"]
 stream = SubResource("AudioStreamRandomizer_7smn1")
+
+[node name="PeaceTimer" type="Timer" parent="Game"]
+process_callback = 0
+wait_time = 180.0
+autostart = true
+
+[node name="Music" type="Node" parent="."]
+
+[node name="MainMusic" type="AudioStreamPlayer" parent="Music"]
+stream = ExtResource("10_a8run")
+volume_db = -10.0
+autoplay = true
+
+[node name="GoodEndingMusic" type="AudioStreamPlayer" parent="Music"]
+stream = ExtResource("13_raeie")
+volume_db = -10.0
+
+[node name="BadEndingMusic" type="AudioStreamPlayer" parent="Music"]
+stream = ExtResource("14_pg34l")
+volume_db = -10.0
+
+[node name="EndingPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_7smn1")
+}
+
+[node name="SFX" type="Node" parent="."]
+
+[node name="RobotVoice" type="AudioStreamPlayer" parent="SFX"]
+stream = SubResource("AudioStreamRandomizer_raeie")
+bus = &"Robovoice"
+
+[node name="TurnOff" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("18_r4lks")
+
+[node name="CanvasLayerForEnding" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="GoodEnding" type="Node2D" parent="CanvasLayerForEnding"]
+modulate = Color(1, 1, 1, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayerForEnding/GoodEnding"]
+position = Vector2(594, 589)
+texture = ExtResource("13_th5th")
+
+[node name="EndingLabel" type="Label" parent="CanvasLayerForEnding/GoodEnding"]
+offset_left = 1138.0
+offset_top = 389.0
+offset_right = 1713.0
+offset_bottom = 812.0
+theme_override_font_sizes/font_size = 150
+text = "Ending
+2/2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BadEnding" type="Node2D" parent="CanvasLayerForEnding"]
+modulate = Color(1, 1, 1, 0)
+
+[node name="EndingLabel" type="Label" parent="CanvasLayerForEnding/BadEnding"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 656.0
+offset_top = 345.0
+offset_right = 1231.0
+offset_bottom = 768.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 150
+text = "Ending
+1/2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GodotTalkLabel" type="RichTextLabel" parent="CanvasLayerForEnding"]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -493.0
+offset_top = -219.0
+offset_right = 493.0
+offset_bottom = 219.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("14_7smn1")
+theme_override_font_sizes/normal_font_size = 46
+horizontal_alignment = 1
+vertical_alignment = 1
