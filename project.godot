@@ -23,7 +23,7 @@ resources_spreadsheet_view/freeze_first_column=true
 
 [application]
 
-config/name="One Million Deaths"
+config/name="Godeath"
 config/tags=PackedStringArray("2d", "game_jam")
 run/main_scene="uid://ie5jxn8ew6ds"
 config/features=PackedStringArray("4.4", "GL Compatibility")
