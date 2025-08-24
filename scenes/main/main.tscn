@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://ie5jxn8ew6ds"]
+[gd_scene load_steps=21 format=4 uid="uid://ie5jxn8ew6ds"]
 
 [ext_resource type="Material" uid="uid://cmbcfxlkxxnwq" path="res://addons/TileMapDual/ghost_material.tres" id="1_iuonh"]
 [ext_resource type="Script" uid="uid://ck2hggmjl8rvi" path="res://scenes/main/main.gd" id="1_ow5a4"]
@@ -10,6 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://dyy2huo6o7pyj" path="res://ui/hud/hud.tscn" id="7_hujxm"]
 [ext_resource type="PackedScene" uid="uid://du5icjqindlek" path="res://scenes/traps/shooting/turret/turret.tscn" id="8_yyfjg"]
 [ext_resource type="AudioStream" uid="uid://bhupuvohet8oc" path="res://assets/music/urban_shop_bpm92.mp3" id="10_a8run"]
+[ext_resource type="AudioStream" uid="uid://dfslcw1v044bf" path="res://assets/sfx/sell.wav" id="11_ouso4"]
+[ext_resource type="AudioStream" uid="uid://lthxnae81ets" path="res://assets/sfx/build.wav" id="12_blune"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6q06x"]
 texture = ExtResource("2_l3cfh")
@@ -158,10 +160,22 @@ scenes/1/scene = ExtResource("7_b1x3f")
 tile_size = Vector2i(64, 64)
 sources/0 = SubResource("TileSetScenesCollectionSource_b1x3f")
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_th5th"]
+random_pitch = 1.25
+streams_count = 1
+stream_0/stream = ExtResource("11_ouso4")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_7smn1"]
+random_pitch = 1.25
+streams_count = 1
+stream_0/stream = ExtResource("12_blune")
+
 [node name="Main" type="Node2D"]
 script = ExtResource("1_ow5a4")
 
-[node name="Walls" type="TileMapLayer" parent="."]
+[node name="Game" type="Node2D" parent="."]
+
+[node name="Walls" type="TileMapLayer" parent="Game"]
 material = ExtResource("1_iuonh")
 tile_map_data = PackedByteArray("AAAAABAAAQACAAEAAAABABAAAQACAAEAAAACABAAAQACAAEAAAADABAAAQACAAEAAAAEABAAAQACAAEAAAAFABAAAQACAAEAAAAGABAAAQACAAEAAAAHABAAAQACAAEAAAAIABAAAQACAAEAAAAJABAAAQACAAEAAAAKABAAAQACAAEAAAALABAAAQACAAEAAAAMABAAAQACAAEAAAANABAAAQACAAEAAAAOABAAAQACAAEAAAAPABAAAQACAAEAAAAQABAAAQACAAEAAAARABAAAQACAAEAAAASABAAAQACAAEAAAATABAAAQACAAEAAAAUABAAAQACAAEAAAAVABAAAQACAAEAAAAWABAAAQACAAEAAAAXABAAAQACAAEAAAAYABAAAQACAAEAAAAZABAAAQACAAEAAAAaABAAAQACAAEAAAAbABAAAQACAAEAAAAcABAAAQACAAEAAAAdABAAAQACAAEAAAAdAA8AAQACAAEAAAAdAA4AAQACAAEAAAAdAA0AAQACAAEAAAAdAAwAAQACAAEAAAAdAAsAAQACAAEAAAAdAAoAAQACAAEAAAAdAAkAAQACAAEAAAAdAAgAAQACAAEAAAAdAAcAAQACAAEAAAAdAAYAAQACAAEAAAAdAAUAAQACAAEAAAAdAAQAAQACAAEAAAAdAAMAAQACAAEAAAAdAAIAAQACAAEAAAAdAAEAAQACAAEAAAAdAAAAAQACAAEAAAAAAAAAAQACAAEAAAAAAAEAAQACAAEAAAAAAAIAAQACAAEAAAAAAAMAAQACAAEAAAAAAAQAAQACAAEAAAAAAAUAAQACAAEAAAAAAAYAAQACAAEAAAABAAYAAQACAAEAAAABAAcAAQACAAEAAAABAAgAAQACAAEAAAABAAkAAQACAAEAAAABAAoAAQACAAEAAAABAAsAAQACAAEAAAABAAwAAQACAAEAAAABAA0AAQACAAEAAAABAA4AAQACAAEAAAABAA8AAQACAAEAAAAAAA8AAQACAAEAAAAAAA4AAQACAAEAAAAAAA0AAQACAAEAAAAAAAwAAQACAAEAAAAAAAsAAQACAAEAAAAAAAoAAQACAAEAAAAAAAkAAQACAAEAAAAAAAgAAQACAAEAAAAAAAcAAQACAAEAAAABAAMAAQACAAEAAAABAAIAAQACAAEAAAABAAEAAQACAAEAAAABAAAAAQACAAEAAAABAAQAAQACAAEAAAABAAUAAQACAAEAAAAcAAAAAQACAAEAAAAcAAEAAQACAAEAAAAcAAIAAQACAAEAAAAcAAMAAQACAAEAAAAcAAQAAQACAAEAAAAcAAUAAQACAAEAAAAcAAYAAQACAAEAAAAcAAcAAQACAAEAAAAcAAgAAQACAAEAAAAcAAkAAQACAAEAAAAcAAoAAQACAAEAAAAcAAsAAQACAAEAAAAcAAwAAQACAAEAAAAcAA0AAQACAAEAAAAcAA4AAQACAAEAAAAcAA8AAQACAAEAAAAbAA8AAQACAAEAAAAaAA8AAQACAAEAAAAZAA8AAQACAAEAAAAYAA8AAQACAAEAAAAXAA8AAQACAAEAAAAWAA8AAQACAAEAAAAVAA8AAQACAAEAAAAUAA8AAQACAAEAAAATAA8AAQACAAEAAAASAA8AAQACAAEAAAARAA8AAQACAAEAAAAQAA8AAQACAAEAAAAPAA8AAQACAAEAAAAOAA8AAQACAAEAAAANAA8AAQACAAEAAAAMAA8AAQACAAEAAAALAA8AAQACAAEAAAAKAA8AAQACAAEAAAAJAA8AAQACAAEAAAAIAA8AAQACAAEAAAAHAA8AAQACAAEAAAAGAA8AAQACAAEAAAAFAA8AAQACAAEAAAAEAA8AAQACAAEAAAADAA8AAQACAAEAAAACAA8AAQACAAEAAAACAAEAAQACAAEAAAADAAEAAQACAAEAAAAEAAEAAQACAAEAAAACAAAAAQACAAEAAAADAAAAAQACAAEAAAAEAAAAAQACAAEAAAAFAAAAAQACAAEAAAAGAAAAAQACAAEAAAAHAAAAAQACAAEAAAAIAAAAAQACAAEAAAAJAAAAAQACAAEAAAAKAAAAAQACAAEAAAALAAAAAQACAAEAAAAMAAAAAQACAAEAAAANAAAAAQACAAEAAAAOAAAAAQACAAEAAAAPAAAAAQACAAEAAAAQAAAAAQACAAEAAAARAAAAAQACAAEAAAASAAAAAQACAAEAAAATAAAAAQACAAEAAAAUAAAAAQACAAEAAAAVAAAAAQACAAEAAAAWAAAAAQACAAEAAAAXAAAAAQACAAEAAAAYAAAAAQACAAEAAAAZAAAAAQACAAEAAAAaAAAAAQACAAEAAAAbAAAAAQACAAEAAAAaAAEAAQACAAEAAAAZAAEAAQACAAEAAAAYAAEAAQACAAEAAAAXAAEAAQACAAEAAAAWAAEAAQACAAEAAAAVAAEAAQACAAEAAAAUAAEAAQACAAEAAAATAAEAAQACAAEAAAASAAEAAQACAAEAAAARAAEAAQACAAEAAAAQAAEAAQACAAEAAAAPAAEAAQACAAEAAAAOAAEAAQACAAEAAAANAAEAAQACAAEAAAAMAAEAAQACAAEAAAALAAEAAQACAAEAAAAKAAEAAQACAAEAAAAJAAEAAQACAAEAAAAIAAEAAQACAAEAAAAHAAEAAQACAAEAAAAGAAEAAQACAAEAAAAFAAEAAQACAAEAAAAbAAEAAQACAAEAAAA=")
 tile_set = SubResource("TileSet_l3cfh")
@@ -170,41 +184,48 @@ godot_4_3_compatibility = false
 metadata/_custom_type_script = "uid://cjk8nronimk5r"
 metadata/_edit_lock_ = true
 
-[node name="AvailabilityGrid" type="TileMapLayer" parent="."]
+[node name="AvailabilityGrid" type="TileMapLayer" parent="Game"]
 tile_set = SubResource("TileSet_hujxm")
 script = ExtResource("5_hujxm")
 metadata/_edit_lock_ = true
 
-[node name="BuildingGrid" type="TileMapLayer" parent="."]
+[node name="BuildingGrid" type="TileMapLayer" parent="Game"]
 tile_set = SubResource("TileSet_a8run")
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="Game"]
 position = Vector2(960, 540)
 
-[node name="DummySpawner" parent="." instance=ExtResource("4_l3cfh")]
+[node name="DummySpawner" parent="Game" instance=ExtResource("4_l3cfh")]
 position = Vector2(950, 303)
 
-[node name="HUD" parent="." instance=ExtResource("7_hujxm")]
+[node name="HUD" parent="Game" instance=ExtResource("7_hujxm")]
 
-[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+[node name="SubViewportContainer" type="SubViewportContainer" parent="Game"]
 unique_name_in_owner = true
 visible = false
 offset_left = 437.0
 offset_top = 536.0
-offset_right = 477.0
-offset_bottom = 576.0
+offset_right = 501.0
+offset_bottom = 600.0
 
-[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+[node name="SubViewport" type="SubViewport" parent="Game/SubViewportContainer"]
 unique_name_in_owner = true
 transparent_bg = true
 handle_input_locally = false
 size = Vector2i(64, 64)
 render_target_update_mode = 0
 
-[node name="GhostBuildingContainer" type="Node2D" parent="SubViewportContainer/SubViewport"]
+[node name="GhostBuildingContainer" type="Node2D" parent="Game/SubViewportContainer/SubViewport"]
 unique_name_in_owner = true
 modulate = Color(0.356863, 1, 1, 0.533333)
 
-[node name="MainMusic" type="AudioStreamPlayer" parent="."]
+[node name="MainMusic" type="AudioStreamPlayer" parent="Game"]
 stream = ExtResource("10_a8run")
 volume_db = -10.0
+autoplay = true
+
+[node name="SellSFX" type="AudioStreamPlayer" parent="Game"]
+stream = SubResource("AudioStreamRandomizer_th5th")
+
+[node name="BuildSFX" type="AudioStreamPlayer" parent="Game"]
+stream = SubResource("AudioStreamRandomizer_7smn1")

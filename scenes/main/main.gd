@@ -1,6 +1,7 @@
 extends Node2D
 
-signal game_won
+signal bad_ending_triggered
+signal good_ending_triggered
 
 const DEATHS_AMOUNT_TO_WIN := 1_000_000
 const BUILDINGS_SOURCE_ID := 0
@@ -10,7 +11,7 @@ var deaths_amount: int = 0:
 		deaths_amount = value
 		GameManager.deaths_amount_changed.emit(deaths_amount)
 		if deaths_amount >= DEATHS_AMOUNT_TO_WIN:
-			game_won.emit()
+			bad_ending_triggered.emit()
 var godocoins_amount: int = 10:
 	set(value):
 		godocoins_amount = value
@@ -21,13 +22,15 @@ var current_building_type: Building.BuildingType
 var current_buying_price: int
 var tile_prices: Dictionary[Vector2i, int]
 
-@onready var hud: HUD = $HUD
-@onready var availability_grid: AvailabilityGrid = $AvailabilityGrid
-@onready var walls_grid: TileMapLayer = $Walls
-@onready var building_grid: TileMapLayer = $BuildingGrid
-@onready var dummy_spawner: DummySpawner = $DummySpawner
+@onready var hud: HUD = $Game/HUD
+@onready var availability_grid: AvailabilityGrid = $Game/AvailabilityGrid
+@onready var walls_grid: TileMapLayer = $Game/Walls
+@onready var building_grid: TileMapLayer = $Game/BuildingGrid
+@onready var dummy_spawner: DummySpawner = $Game/DummySpawner
 @onready var sub_viewport_container: SubViewportContainer = %SubViewportContainer
 @onready var ghost_building_container: Node2D = %GhostBuildingContainer
+@onready var sell_sfx: AudioStreamPlayer = $Game/SellSFX
+@onready var build_sfx: AudioStreamPlayer = $Game/BuildSFX
 
 
 func _ready() -> void:
@@ -47,13 +50,16 @@ func _physics_process(delta: float) -> void:
 func _input(event: InputEvent) -> void:
 	var coords := availability_grid.local_to_map(sub_viewport_container.global_position)
 	if event.is_action_pressed(&"sell"):
-		building_grid.erase_cell(coords)
-		availability_grid.set_cell(coords, 0, AvailabilityGrid.tile_mapping.get(AvailabilityGrid.TILE_TYPE.CAN_BUILD), 0)
 		var tile_price = tile_prices.get(coords)
 		if tile_price != null:
+			building_grid.erase_cell(coords)
+			availability_grid.set_cell(coords, 0, AvailabilityGrid.tile_mapping.get(AvailabilityGrid.TILE_TYPE.CAN_BUILD), 0)
+			tile_prices.erase(coords)
+			sell_sfx.play()
 			godocoins_amount += tile_price
 	elif event.is_action_pressed(&"build") and is_in_building_mode:
 		if availability_grid.get_cell_atlas_coords(coords) == AvailabilityGrid.tile_mapping.get(AvailabilityGrid.TILE_TYPE.CAN_BUILD) and godocoins_amount >= current_buying_price:
+			build_sfx.play()
 			building_grid.set_cell(coords, BUILDINGS_SOURCE_ID, Vector2i.ZERO, current_building_type)
 			availability_grid.set_cell(coords, 0, AvailabilityGrid.tile_mapping.get(AvailabilityGrid.TILE_TYPE.CANT_BUILD), 0)
 			godocoins_amount -= current_buying_price
