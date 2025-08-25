@@ -1,3 +1,4 @@
+class_name Main
 extends Node2D
 
 signal bad_ending_triggered
@@ -34,14 +35,16 @@ var tile_prices: Dictionary[Vector2i, int]
 @onready var peace_timer: Timer = $Game/PeaceTimer
 @onready var game: Node2D = $Game
 @onready var ending_player: AnimationPlayer = $EndingPlayer
+@onready var dummy_spawner_2: DummySpawner = $Game/DummySpawner2
+@onready var dummy_spawner_3: DummySpawner = $Game/DummySpawner3
 
 
 func _ready() -> void:
 	dummy_spawner.dummy_died.connect(_on_dummy_died)
 	dummy_spawner.dummy_took_damage.connect(_on_dummy_took_damage)
 	peace_timer.timeout.connect(func(): good_ending_triggered.emit())
+	GameManager.dummy_upgrade_learnt.connect(_spawn_additional_dummy)
 	GameManager.building_button_pressed.connect(_on_building_button_pressed)
-
 	GameManager.deaths_amount_changed.emit(deaths_amount)
 	GameManager.godocoins_amount_changed.emit(godocoins_amount)
 
@@ -76,6 +79,12 @@ func _input(event: InputEvent) -> void:
 		sub_viewport_container.hide()
 		availability_grid.hide()
 
+
+func _spawn_additional_dummy() -> void:
+	if dummy_spawner_2.process_mode == Node.PROCESS_MODE_DISABLED:
+		dummy_spawner_2.process_mode = Node.PROCESS_MODE_INHERIT
+	else:
+		dummy_spawner_3.process_mode = Node.PROCESS_MODE_INHERIT
 
 func _start_good_ending() -> void:
 	game.process_mode = PROCESS_MODE_DISABLED

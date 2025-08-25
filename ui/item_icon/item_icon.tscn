@@ -1,12 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://cvdqpgqs4cg4"]
+[gd_scene load_steps=6 format=3 uid="uid://cvdqpgqs4cg4"]
 
 [ext_resource type="Texture2D" uid="uid://d4ke083r7ma34" path="res://icon.svg" id="1_ljoxm"]
 [ext_resource type="Script" uid="uid://dhi63dp6vn55" path="res://ui/item_icon/item_icon.gd" id="2_1h52h"]
+[ext_resource type="Texture2D" uid="uid://c66ual05se0dx" path="res://assets/visuals/lock.png" id="2_7lghc"]
+[ext_resource type="Texture2D" uid="uid://bsfbhefo608ok" path="res://assets/visuals/godocoin.png" id="3_udrs6"]
+[ext_resource type="Texture2D" uid="uid://dwuy64pdi8w24" path="res://assets/visuals/deaths.png" id="4_7lghc"]
 
 [node name="ItemIcon" type="TextureButton"]
 offset_right = 128.0
 offset_bottom = 128.0
 texture_normal = ExtResource("1_ljoxm")
+texture_disabled = ExtResource("2_7lghc")
 script = ExtResource("2_1h52h")
 
 [node name="GodocoinsContainer" type="HBoxContainer" parent="."]
@@ -20,7 +24,7 @@ grow_vertical = 0
 
 [node name="GodocoinsIcon" type="TextureRect" parent="GodocoinsContainer"]
 layout_mode = 2
-texture = ExtResource("1_ljoxm")
+texture = ExtResource("3_udrs6")
 expand_mode = 2
 
 [node name="GodocoinsAmountLabel" type="Label" parent="GodocoinsContainer"]
@@ -30,12 +34,12 @@ text = "9999999"
 
 [node name="DeathsContainer" type="HBoxContainer" parent="."]
 layout_mode = 1
-offset_right = 91.0
-offset_bottom = 23.0
+offset_right = 131.0
+offset_bottom = 29.0
 
 [node name="DeathsIcon" type="TextureRect" parent="DeathsContainer"]
 layout_mode = 2
-texture = ExtResource("1_ljoxm")
+texture = ExtResource("4_7lghc")
 expand_mode = 2
 
 [node name="DeathsAmountLabel" type="Label" parent="DeathsContainer"]

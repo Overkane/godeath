@@ -4,7 +4,7 @@ extends Marker2D
 signal dummy_died
 signal dummy_took_damage(amount: int)
 
-var dummy_respawn_time: float = 3.0
+static var dummy_respawn_time: float = 3.0
 
 @export var dummy_scene: PackedScene
 

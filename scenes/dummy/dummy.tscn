@@ -189,4 +189,3 @@ angular_limit_upper = 1.5708
 [node name="Components" type="Node2D" parent="."]
 
 [node name="Health" parent="Components" instance=ExtResource("3_xqvh8")]
-_max_health = 5

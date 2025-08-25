@@ -1,5 +1,7 @@
 extends TextureButton
 
+const DONE_ICON = preload("res://assets/visuals/done_icon.png")
+
 @export var purchasable_item: PurchasableItem
 
 @onready var godocoins_amount_label := %GodocoinsAmountLabel
@@ -13,12 +15,14 @@ func _ready() -> void:
 	godocoins_amount_label.text = str(purchasable_item.godocoins_cost)
 	deaths_amount_label.text = str(purchasable_item.death_requirement)
 	tooltip_text = "%s\n%s" % [purchasable_item.item_name, purchasable_item.item_description]
+	texture_normal = purchasable_item.item_icon
 
 	disabled = true
 
 func _on_pressed() -> void:
 	if purchasable_item is Upgrade:
 		disabled = true
+		texture_disabled = DONE_ICON
 		Upgrade.upgrade_functions.get(purchasable_item.upgrade_type).call()
 	elif purchasable_item is Building:
 		GameManager.building_button_pressed.emit(purchasable_item)

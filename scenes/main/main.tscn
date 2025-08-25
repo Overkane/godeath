@@ -179,6 +179,233 @@ random_pitch = 1.25
 streams_count = 1
 stream_0/stream = ExtResource("12_blune")
 
+[sub_resource type="Animation" id="Animation_7smn1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Fader:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayerForEnding/GoodEnding:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayerForEnding/GodotTalkLabel:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [""]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CanvasLayerForEnding/GodotTalkLabel:visible_ratio")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CanvasLayerForEnding/GodotTalkLabel:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Music/MainMusic:volume_db")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-10.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Music/GoodEndingMusic:volume_db")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-10.0]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Music/MainMusic:playing")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("CanvasLayerForEnding/BadEnding:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Music/BadEndingMusic:playing")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_th5th"]
+resource_name = "bad_ending"
+length = 50.0
+step = 0.5
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SFX/TurnOff")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [0.0],
+"method": &"play"
+}]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/Fader:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Music/MainMusic:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CanvasLayerForEnding/GodotTalkLabel:text")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["You have won.
+But was it worth it?"]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CanvasLayerForEnding/GodotTalkLabel:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 7, 8, 10),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("CanvasLayerForEnding/BadEnding:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 11, 11.5, 41.9387, 42),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("CanvasLayerForEnding/GodotTalkLabel:visible_ratio")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(3, 4.5, 5.38302, 7),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.4, 0.4, 1.0]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Music/BadEndingMusic:playing")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
 [sub_resource type="Animation" id="Animation_blune"]
 resource_name = "good_ending"
 length = 20.0
@@ -330,233 +557,6 @@ tracks/8/keys = {
 }]
 }
 
-[sub_resource type="Animation" id="Animation_th5th"]
-resource_name = "bad_ending"
-length = 50.0
-step = 0.5
-tracks/0/type = "method"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("SFX/TurnOff")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [0.0],
-"method": &"play"
-}]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("CanvasLayer/Fader:color")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Music/MainMusic:playing")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("CanvasLayerForEnding/GodotTalkLabel:text")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["You have won.
-But was it worth it?"]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("CanvasLayerForEnding/GodotTalkLabel:modulate")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 7, 8, 10),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("CanvasLayerForEnding/BadEnding:modulate")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0, 11, 11.5, 41.9387, 42),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("CanvasLayerForEnding/GodotTalkLabel:visible_ratio")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(3, 4.5, 5.38302, 7),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [0.0, 0.4, 0.4, 1.0]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("Music/BadEndingMusic:playing")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
-
-[sub_resource type="Animation" id="Animation_7smn1"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CanvasLayer/Fader:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0, 0, 0, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("CanvasLayerForEnding/GoodEnding:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("CanvasLayerForEnding/GodotTalkLabel:text")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [""]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("CanvasLayerForEnding/GodotTalkLabel:visible_ratio")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [1.0]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("CanvasLayerForEnding/GodotTalkLabel:modulate")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Music/MainMusic:volume_db")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [-10.0]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("Music/GoodEndingMusic:volume_db")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [-10.0]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("Music/MainMusic:playing")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/8/type = "value"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("CanvasLayerForEnding/BadEnding:modulate")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
-}
-tracks/9/type = "value"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("Music/BadEndingMusic:playing")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7smn1"]
 _data = {
 &"RESET": SubResource("Animation_7smn1"),
@@ -592,7 +592,7 @@ color = Color(0, 0, 0, 0)
 
 [node name="Walls" type="TileMapLayer" parent="Game"]
 material = ExtResource("1_iuonh")
-tile_map_data = PackedByteArray("AAAAABAAAQACAAEAAAABABAAAQACAAEAAAACABAAAQACAAEAAAADABAAAQACAAEAAAAEABAAAQACAAEAAAAFABAAAQACAAEAAAAGABAAAQACAAEAAAAHABAAAQACAAEAAAAIABAAAQACAAEAAAAJABAAAQACAAEAAAAKABAAAQACAAEAAAALABAAAQACAAEAAAAMABAAAQACAAEAAAANABAAAQACAAEAAAAOABAAAQACAAEAAAAPABAAAQACAAEAAAAQABAAAQACAAEAAAARABAAAQACAAEAAAASABAAAQACAAEAAAATABAAAQACAAEAAAAUABAAAQACAAEAAAAVABAAAQACAAEAAAAWABAAAQACAAEAAAAXABAAAQACAAEAAAAYABAAAQACAAEAAAAZABAAAQACAAEAAAAaABAAAQACAAEAAAAbABAAAQACAAEAAAAcABAAAQACAAEAAAAdABAAAQACAAEAAAAdAA8AAQACAAEAAAAdAA4AAQACAAEAAAAdAA0AAQACAAEAAAAdAAwAAQACAAEAAAAdAAsAAQACAAEAAAAdAAoAAQACAAEAAAAdAAkAAQACAAEAAAAdAAgAAQACAAEAAAAdAAcAAQACAAEAAAAdAAYAAQACAAEAAAAdAAUAAQACAAEAAAAdAAQAAQACAAEAAAAdAAMAAQACAAEAAAAdAAIAAQACAAEAAAAdAAEAAQACAAEAAAAdAAAAAQACAAEAAAAAAAAAAQACAAEAAAAAAAEAAQACAAEAAAAAAAIAAQACAAEAAAAAAAMAAQACAAEAAAAAAAQAAQACAAEAAAAAAAUAAQACAAEAAAAAAAYAAQACAAEAAAABAAYAAQACAAEAAAABAAcAAQACAAEAAAABAAgAAQACAAEAAAABAAkAAQACAAEAAAABAAoAAQACAAEAAAABAAsAAQACAAEAAAABAAwAAQACAAEAAAABAA0AAQACAAEAAAABAA4AAQACAAEAAAABAA8AAQACAAEAAAAAAA8AAQACAAEAAAAAAA4AAQACAAEAAAAAAA0AAQACAAEAAAAAAAwAAQACAAEAAAAAAAsAAQACAAEAAAAAAAoAAQACAAEAAAAAAAkAAQACAAEAAAAAAAgAAQACAAEAAAAAAAcAAQACAAEAAAABAAMAAQACAAEAAAABAAIAAQACAAEAAAABAAEAAQACAAEAAAABAAAAAQACAAEAAAABAAQAAQACAAEAAAABAAUAAQACAAEAAAAcAAAAAQACAAEAAAAcAAEAAQACAAEAAAAcAAIAAQACAAEAAAAcAAMAAQACAAEAAAAcAAQAAQACAAEAAAAcAAUAAQACAAEAAAAcAAYAAQACAAEAAAAcAAcAAQACAAEAAAAcAAgAAQACAAEAAAAcAAkAAQACAAEAAAAcAAoAAQACAAEAAAAcAAsAAQACAAEAAAAcAAwAAQACAAEAAAAcAA0AAQACAAEAAAAcAA4AAQACAAEAAAAcAA8AAQACAAEAAAAbAA8AAQACAAEAAAAaAA8AAQACAAEAAAAZAA8AAQACAAEAAAAYAA8AAQACAAEAAAAXAA8AAQACAAEAAAAWAA8AAQACAAEAAAAVAA8AAQACAAEAAAAUAA8AAQACAAEAAAATAA8AAQACAAEAAAASAA8AAQACAAEAAAARAA8AAQACAAEAAAAQAA8AAQACAAEAAAAPAA8AAQACAAEAAAAOAA8AAQACAAEAAAANAA8AAQACAAEAAAAMAA8AAQACAAEAAAALAA8AAQACAAEAAAAKAA8AAQACAAEAAAAJAA8AAQACAAEAAAAIAA8AAQACAAEAAAAHAA8AAQACAAEAAAAGAA8AAQACAAEAAAAFAA8AAQACAAEAAAAEAA8AAQACAAEAAAADAA8AAQACAAEAAAACAA8AAQACAAEAAAACAAEAAQACAAEAAAADAAEAAQACAAEAAAAEAAEAAQACAAEAAAACAAAAAQACAAEAAAADAAAAAQACAAEAAAAEAAAAAQACAAEAAAAFAAAAAQACAAEAAAAGAAAAAQACAAEAAAAHAAAAAQACAAEAAAAIAAAAAQACAAEAAAAJAAAAAQACAAEAAAAKAAAAAQACAAEAAAALAAAAAQACAAEAAAAMAAAAAQACAAEAAAANAAAAAQACAAEAAAAOAAAAAQACAAEAAAAPAAAAAQACAAEAAAAQAAAAAQACAAEAAAARAAAAAQACAAEAAAASAAAAAQACAAEAAAATAAAAAQACAAEAAAAUAAAAAQACAAEAAAAVAAAAAQACAAEAAAAWAAAAAQACAAEAAAAXAAAAAQACAAEAAAAYAAAAAQACAAEAAAAZAAAAAQACAAEAAAAaAAAAAQACAAEAAAAbAAAAAQACAAEAAAAaAAEAAQACAAEAAAAZAAEAAQACAAEAAAAYAAEAAQACAAEAAAAXAAEAAQACAAEAAAAWAAEAAQACAAEAAAAVAAEAAQACAAEAAAAUAAEAAQACAAEAAAATAAEAAQACAAEAAAASAAEAAQACAAEAAAARAAEAAQACAAEAAAAQAAEAAQACAAEAAAAPAAEAAQACAAEAAAAOAAEAAQACAAEAAAANAAEAAQACAAEAAAAMAAEAAQACAAEAAAALAAEAAQACAAEAAAAKAAEAAQACAAEAAAAJAAEAAQACAAEAAAAIAAEAAQACAAEAAAAHAAEAAQACAAEAAAAGAAEAAQACAAEAAAAFAAEAAQACAAEAAAAbAAEAAQACAAEAAAA=")
+tile_map_data = PackedByteArray("AAAAABAAAQACAAEAAAABABAAAQACAAEAAAACABAAAQACAAEAAAADABAAAQACAAEAAAAEABAAAQACAAEAAAAFABAAAQACAAEAAAAGABAAAQACAAEAAAAHABAAAQACAAEAAAAIABAAAQACAAEAAAAJABAAAQACAAEAAAAKABAAAQACAAEAAAALABAAAQACAAEAAAAMABAAAQACAAEAAAANABAAAQACAAEAAAAOABAAAQACAAEAAAAPABAAAQACAAEAAAAQABAAAQACAAEAAAARABAAAQACAAEAAAASABAAAQACAAEAAAATABAAAQACAAEAAAAUABAAAQACAAEAAAAVABAAAQACAAEAAAAWABAAAQACAAEAAAAXABAAAQACAAEAAAAYABAAAQACAAEAAAAZABAAAQACAAEAAAAaABAAAQACAAEAAAAbABAAAQACAAEAAAAcABAAAQACAAEAAAAdABAAAQACAAEAAAAdAA8AAQACAAEAAAAdAA4AAQACAAEAAAAdAA0AAQACAAEAAAAdAAwAAQACAAEAAAAdAAsAAQACAAEAAAAdAAoAAQACAAEAAAAdAAkAAQACAAEAAAAdAAgAAQACAAEAAAAdAAcAAQACAAEAAAAdAAYAAQACAAEAAAAdAAUAAQACAAEAAAAdAAQAAQACAAEAAAAdAAMAAQACAAEAAAAdAAIAAQACAAEAAAAdAAEAAQACAAEAAAAdAAAAAQACAAEAAAAAAAAAAQACAAEAAAAAAAEAAQACAAEAAAAAAAIAAQACAAEAAAAAAAMAAQACAAEAAAAAAAQAAQACAAEAAAAAAAUAAQACAAEAAAAAAAYAAQACAAEAAAABAAYAAQACAAEAAAABAAcAAQACAAEAAAABAAgAAQACAAEAAAABAAkAAQACAAEAAAABAAoAAQACAAEAAAABAAsAAQACAAEAAAABAAwAAQACAAEAAAABAA0AAQACAAEAAAABAA4AAQACAAEAAAABAA8AAQACAAEAAAAAAA8AAQACAAEAAAAAAA4AAQACAAEAAAAAAA0AAQACAAEAAAAAAAwAAQACAAEAAAAAAAsAAQACAAEAAAAAAAoAAQACAAEAAAAAAAkAAQACAAEAAAAAAAgAAQACAAEAAAAAAAcAAQACAAEAAAABAAMAAQACAAEAAAABAAIAAQACAAEAAAABAAEAAQACAAEAAAABAAAAAQACAAEAAAABAAQAAQACAAEAAAABAAUAAQACAAEAAAAcAAAAAQACAAEAAAAcAAEAAQACAAEAAAAcAAIAAQACAAEAAAAcAAMAAQACAAEAAAAcAAQAAQACAAEAAAAcAAUAAQACAAEAAAAcAAYAAQACAAEAAAAcAAcAAQACAAEAAAAcAAgAAQACAAEAAAAcAAkAAQACAAEAAAAcAAoAAQACAAEAAAAcAAsAAQACAAEAAAAcAAwAAQACAAEAAAAcAA0AAQACAAEAAAAcAA4AAQACAAEAAAAcAA8AAQACAAEAAAAbAA8AAQACAAEAAAAaAA8AAQACAAEAAAAZAA8AAQACAAEAAAAYAA8AAQACAAEAAAAXAA8AAQACAAEAAAAWAA8AAQACAAEAAAAVAA8AAQACAAEAAAAUAA8AAQACAAEAAAATAA8AAQACAAEAAAASAA8AAQACAAEAAAARAA8AAQACAAEAAAAQAA8AAQACAAEAAAAPAA8AAQACAAEAAAAOAA8AAQACAAEAAAANAA8AAQACAAEAAAAMAA8AAQACAAEAAAALAA8AAQACAAEAAAAKAA8AAQACAAEAAAAJAA8AAQACAAEAAAAIAA8AAQACAAEAAAAHAA8AAQACAAEAAAAGAA8AAQACAAEAAAAFAA8AAQACAAEAAAAEAA8AAQACAAEAAAADAA8AAQACAAEAAAACAA8AAQACAAEAAAACAAEAAQACAAEAAAADAAEAAQACAAEAAAAEAAEAAQACAAEAAAACAAAAAQACAAEAAAADAAAAAQACAAEAAAAEAAAAAQACAAEAAAAFAAAAAQACAAEAAAAGAAAAAQACAAEAAAAHAAAAAQACAAEAAAAIAAAAAQACAAEAAAAJAAAAAQACAAEAAAAKAAAAAQACAAEAAAALAAAAAQACAAEAAAAMAAAAAQACAAEAAAANAAAAAQACAAEAAAAOAAAAAQACAAEAAAAPAAAAAQACAAEAAAAQAAAAAQACAAEAAAARAAAAAQACAAEAAAASAAAAAQACAAEAAAATAAAAAQACAAEAAAAUAAAAAQACAAEAAAAVAAAAAQACAAEAAAAWAAAAAQACAAEAAAAXAAAAAQACAAEAAAAYAAAAAQACAAEAAAAZAAAAAQACAAEAAAAaAAAAAQACAAEAAAAbAAAAAQACAAEAAAAaAAEAAQACAAEAAAAZAAEAAQACAAEAAAAYAAEAAQACAAEAAAAXAAEAAQACAAEAAAAWAAEAAQACAAEAAAAVAAEAAQACAAEAAAAUAAEAAQACAAEAAAATAAEAAQACAAEAAAASAAEAAQACAAEAAAARAAEAAQACAAEAAAAQAAEAAQACAAEAAAAPAAEAAQACAAEAAAAOAAEAAQACAAEAAAANAAEAAQACAAEAAAAMAAEAAQACAAEAAAALAAEAAQACAAEAAAAKAAEAAQACAAEAAAAJAAEAAQACAAEAAAAIAAEAAQACAAEAAAAHAAEAAQACAAEAAAAGAAEAAQACAAEAAAAFAAEAAQACAAEAAAAbAAEAAQACAAEAAAD+/wAAAQACAAEAAAD+/wEAAQACAAEAAAD+/wIAAQACAAEAAAD+/wMAAQACAAEAAAD+/wQAAQACAAEAAAD+/wUAAQACAAEAAAD+/wYAAQACAAEAAAD+/wcAAQACAAEAAAD+/wgAAQACAAEAAAD+/wkAAQACAAEAAAD+/woAAQACAAEAAAD+/wsAAQACAAEAAAD+/wwAAQACAAEAAAD+/w0AAQACAAEAAAD+/w4AAQACAAEAAAD+/w8AAQACAAEAAAD+/xAAAQACAAEAAAD//wAAAQACAAEAAAD//wEAAQACAAEAAAD//wIAAQACAAEAAAD//wMAAQACAAEAAAD//wQAAQACAAEAAAD//wUAAQACAAEAAAD//wYAAQACAAEAAAD//wcAAQACAAEAAAD//wgAAQACAAEAAAD//wkAAQACAAEAAAD//woAAQACAAEAAAD//wsAAQACAAEAAAD//wwAAQACAAEAAAD//w0AAQACAAEAAAD//w4AAQACAAEAAAD//w8AAQACAAEAAAD//xAAAQACAAEAAAAeAAAAAQACAAEAAAAeAAEAAQACAAEAAAAeAAIAAQACAAEAAAAeAAMAAQACAAEAAAAeAAQAAQACAAEAAAAeAAUAAQACAAEAAAAeAAYAAQACAAEAAAAeAAcAAQACAAEAAAAeAAgAAQACAAEAAAAeAAkAAQACAAEAAAAeAAoAAQACAAEAAAAeAAsAAQACAAEAAAAeAAwAAQACAAEAAAAeAA0AAQACAAEAAAAeAA4AAQACAAEAAAAeAA8AAQACAAEAAAAeABAAAQACAAEAAAAfAAAAAQACAAEAAAAfAAEAAQACAAEAAAAfAAIAAQACAAEAAAAfAAMAAQACAAEAAAAfAAQAAQACAAEAAAAfAAUAAQACAAEAAAAfAAYAAQACAAEAAAAfAAcAAQACAAEAAAAfAAgAAQACAAEAAAAfAAkAAQACAAEAAAAfAAoAAQACAAEAAAAfAAsAAQACAAEAAAAfAAwAAQACAAEAAAAfAA0AAQACAAEAAAAfAA4AAQACAAEAAAAfAA8AAQACAAEAAAAfABAAAQACAAEAAAD+////AQACAAEAAAD/////AQACAAEAAAAAAP//AQACAAEAAAABAP//AQACAAEAAAACAP//AQACAAEAAAADAP//AQACAAEAAAAEAP//AQACAAEAAAAFAP//AQACAAEAAAAGAP//AQACAAEAAAAHAP//AQACAAEAAAAIAP//AQACAAEAAAAJAP//AQACAAEAAAAKAP//AQACAAEAAAALAP//AQACAAEAAAAMAP//AQACAAEAAAANAP//AQACAAEAAAAOAP//AQACAAEAAAAPAP//AQACAAEAAAAQAP//AQACAAEAAAARAP//AQACAAEAAAASAP//AQACAAEAAAATAP//AQACAAEAAAAUAP//AQACAAEAAAAVAP//AQACAAEAAAAWAP//AQACAAEAAAAXAP//AQACAAEAAAAYAP//AQACAAEAAAAZAP//AQACAAEAAAAaAP//AQACAAEAAAAbAP//AQACAAEAAAAcAP//AQACAAEAAAAdAP//AQACAAEAAAAeAP//AQACAAEAAAAfAP//AQACAAEAAAD+/xEAAQACAAEAAAD//xEAAQACAAEAAAAAABEAAQACAAEAAAABABEAAQACAAEAAAACABEAAQACAAEAAAADABEAAQACAAEAAAAEABEAAQACAAEAAAAFABEAAQACAAEAAAAGABEAAQACAAEAAAAHABEAAQACAAEAAAAIABEAAQACAAEAAAAJABEAAQACAAEAAAAKABEAAQACAAEAAAALABEAAQACAAEAAAAMABEAAQACAAEAAAANABEAAQACAAEAAAAOABEAAQACAAEAAAAPABEAAQACAAEAAAAQABEAAQACAAEAAAARABEAAQACAAEAAAASABEAAQACAAEAAAATABEAAQACAAEAAAAUABEAAQACAAEAAAAVABEAAQACAAEAAAAWABEAAQACAAEAAAAXABEAAQACAAEAAAAYABEAAQACAAEAAAAZABEAAQACAAEAAAAaABEAAQACAAEAAAAbABEAAQACAAEAAAAcABEAAQACAAEAAAAdABEAAQACAAEAAAAeABEAAQACAAEAAAAfABEAAQACAAEAAAA=")
 tile_set = SubResource("TileSet_l3cfh")
 script = ExtResource("2_k2fmo")
 godot_4_3_compatibility = false
@@ -612,6 +612,14 @@ position = Vector2(960, 540)
 
 [node name="DummySpawner" parent="Game" instance=ExtResource("4_l3cfh")]
 position = Vector2(950, 303)
+
+[node name="DummySpawner2" parent="Game" instance=ExtResource("4_l3cfh")]
+process_mode = 4
+position = Vector2(528, 303)
+
+[node name="DummySpawner3" parent="Game" instance=ExtResource("4_l3cfh")]
+process_mode = 4
+position = Vector2(1388, 303)
 
 [node name="HUD" parent="Game" instance=ExtResource("7_hujxm")]
 
@@ -669,7 +677,6 @@ libraries = {
 
 [node name="RobotVoice" type="AudioStreamPlayer" parent="SFX"]
 stream = SubResource("AudioStreamRandomizer_raeie")
-bus = &"Robovoice"
 
 [node name="TurnOff" type="AudioStreamPlayer" parent="SFX"]
 stream = ExtResource("18_r4lks")

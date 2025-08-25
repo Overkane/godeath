@@ -1,11 +1,14 @@
-[gd_resource type="Resource" script_class="Upgrade" load_steps=2 format=3 uid="uid://brgdrsmaxfi5w"]
+[gd_resource type="Resource" script_class="Upgrade" load_steps=3 format=3 uid="uid://brgdrsmaxfi5w"]
 
 [ext_resource type="Script" uid="uid://dmx52mv6kbqlw" path="res://resources/purchasable_items/upgrades/upgrade.gd" id="1_axabq"]
+[ext_resource type="Texture2D" uid="uid://dld0nulcwaehy" path="res://assets/visuals/dummy_clone.png" id="1_vh5pw"]
 
 [resource]
 script = ExtResource("1_axabq")
+upgrade_type = 0
 item_name = "Add Dummy"
 item_description = "Adds additional dummy to the field."
+item_icon = ExtResource("1_vh5pw")
 death_requirement = 50
 godocoins_cost = 100
 metadata/_custom_type_script = "uid://dmx52mv6kbqlw"

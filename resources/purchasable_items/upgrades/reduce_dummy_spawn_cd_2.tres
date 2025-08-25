@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="Upgrade" load_steps=2 format=3 uid="uid://cx4whxu0tqhla"]
+[gd_resource type="Resource" script_class="Upgrade" load_steps=3 format=3 uid="uid://cx4whxu0tqhla"]
 
+[ext_resource type="Texture2D" uid="uid://b1rt5m64nu0el" path="res://assets/visuals/reduce_spawn_time_upgrade.png" id="1_21ig0"]
 [ext_resource type="Script" uid="uid://dmx52mv6kbqlw" path="res://resources/purchasable_items/upgrades/upgrade.gd" id="1_be6v7"]
 
 [resource]
@@ -7,6 +8,7 @@ script = ExtResource("1_be6v7")
 upgrade_type = 6
 item_name = "Reduce Dummy Spawn CD"
 item_description = "Reduces dummy spawn cooldown by 0.75."
+item_icon = ExtResource("1_21ig0")
 death_requirement = 87
 godocoins_cost = 32
 metadata/_custom_type_script = "uid://dmx52mv6kbqlw"

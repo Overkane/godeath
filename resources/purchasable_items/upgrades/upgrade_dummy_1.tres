@@ -1,12 +1,14 @@
-[gd_resource type="Resource" script_class="Upgrade" load_steps=2 format=3 uid="uid://b0ocmylonhkdt"]
+[gd_resource type="Resource" script_class="Upgrade" load_steps=3 format=3 uid="uid://b0ocmylonhkdt"]
 
 [ext_resource type="Script" uid="uid://dmx52mv6kbqlw" path="res://resources/purchasable_items/upgrades/upgrade.gd" id="1_6ebp1"]
+[ext_resource type="Texture2D" uid="uid://bkm0l71d716oa" path="res://assets/visuals/dummy_upgrade.png" id="1_tv3dy"]
 
 [resource]
 script = ExtResource("1_6ebp1")
 upgrade_type = 2
 item_name = "Dummy Upgrade"
 item_description = "Upgrades dummy stat by X."
+item_icon = ExtResource("1_tv3dy")
 death_requirement = 10
 godocoins_cost = 5
 metadata/_custom_type_script = "uid://dmx52mv6kbqlw"
