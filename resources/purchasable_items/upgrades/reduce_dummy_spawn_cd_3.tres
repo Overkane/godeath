@@ -7,8 +7,8 @@
 script = ExtResource("1_q8eu3")
 upgrade_type = 7
 item_name = "Reduce Dummy Spawn CD"
-item_description = "Reduces dummy spawn cooldown by 1.0."
+item_description = "Reduces dummy spawn cooldown by 0.75."
 item_icon = ExtResource("1_7dc4m")
-death_requirement = 111
-godocoins_cost = 600
+death_requirement = 240
+godocoins_cost = 400
 metadata/_custom_type_script = "uid://dmx52mv6kbqlw"

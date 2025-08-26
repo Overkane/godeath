@@ -6,9 +6,9 @@
 [resource]
 script = ExtResource("1_87rgm")
 building_type = 1
-item_name = "Spikes"
-item_description = "Pins dummy."
+item_name = "Machine Gun"
+item_description = "Shoots projectiles. Fast."
 item_icon = ExtResource("1_bbhnu")
-death_requirement = 15
-godocoins_cost = 10
+death_requirement = 80
+godocoins_cost = 80
 metadata/_custom_type_script = "uid://yks00ur2r6od"

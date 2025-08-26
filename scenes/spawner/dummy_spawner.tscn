@@ -11,10 +11,6 @@ size = Vector2(208, 371)
 script = ExtResource("1_3ikm1")
 dummy_scene = ExtResource("1_vky8n")
 
-[node name="DummyGhost" parent="." instance=ExtResource("1_vky8n")]
-process_mode = 4
-visible = false
-
 [node name="BuildableArea" type="Area2D" parent="."]
 collision_layer = 0
 collision_mask = 7

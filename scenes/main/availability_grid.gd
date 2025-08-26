@@ -33,11 +33,4 @@ func show_for(walls_grid: TileMapLayer, bulding_grid: TileMapLayer) ->  void:
 			var tile_type = TILE_TYPE.CAN_BUILD if is_wall_nearby and not build_positions.has(tile_pos) else TILE_TYPE.CANT_BUILD
 			set_cell(tile_pos, 0, tile_mapping.get(tile_type))
 
-	_calculate_tiles()
 	show()
-
-
-func _calculate_tiles() -> void:
-	pass
-	#	TODO finish
-	#	set_cell(Vector2(4, 4), 0, tile_mapping.get(TILE_TYPE.CAN_BUILD))

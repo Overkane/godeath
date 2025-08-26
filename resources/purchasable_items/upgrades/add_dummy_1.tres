@@ -9,6 +9,6 @@ upgrade_type = 0
 item_name = "Add Dummy"
 item_description = "Adds additional dummy to the field."
 item_icon = ExtResource("1_vh5pw")
-death_requirement = 50
+death_requirement = 40
 godocoins_cost = 100
 metadata/_custom_type_script = "uid://dmx52mv6kbqlw"

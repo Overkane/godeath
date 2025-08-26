@@ -33,9 +33,12 @@ static func reduce_dummy_spawn_cd():
 
 static func upgrade_dummy_1():
 	DummyHealth.max_health += 10
+	Main.dummy_kill_value += 1
 
 static func upgrade_dummy_2():
 	DummyHealth.max_health += 20
+	Main.dummy_kill_value += 1
 
 static func upgrade_dummy_3():
 	DummyHealth.max_health += 30
+	Main.dummy_kill_value += 1

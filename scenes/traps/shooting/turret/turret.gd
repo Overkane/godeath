@@ -8,16 +8,21 @@ extends Node2D
 @onready var projectile_spawn_point: Marker2D = $GunMount/ProjectileSpawnPoint
 
 var can_shoot := false
-
+var target: Dummy = null
 
 func _ready() -> void:
 	shooting_cooldown_timer.timeout.connect(func(): can_shoot = true)
 	shooting_cooldown_timer.start(shooting_cooldown)
 
 func _physics_process(delta: float) -> void:
-	if GameManager.dummy != null:
+	if can_shoot and target == null:
+		var dummies: Array = get_tree().get_nodes_in_group("dummy")
+		if not dummies.is_empty():
+			target = get_tree().get_nodes_in_group("dummy").pick_random()
+
+	if target != null:
 		# TODO add lerp later
-		gun_mount.look_at(GameManager.dummy.get_hit_spot().global_position)
+		gun_mount.look_at(target.get_hit_spot().global_position)
 		if can_shoot:
 			_shoot()
 

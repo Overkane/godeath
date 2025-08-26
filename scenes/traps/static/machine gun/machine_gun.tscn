@@ -4,8 +4,9 @@
 [ext_resource type="PackedScene" uid="uid://d2g6k56hq1apk" path="res://scenes/traps/shooting/turret/projectile.tscn" id="2_4dwk3"]
 [ext_resource type="Texture2D" uid="uid://d4ke083r7ma34" path="res://icon.svg" id="3_0k6jb"]
 
-[node name="Spikes" type="Node2D"]
+[node name="MachineGun" type="Node2D"]
 script = ExtResource("1_p1ied")
+shooting_cooldown = 0.5
 projectile_scene = ExtResource("2_4dwk3")
 
 [node name="TurretSprite" type="Sprite2D" parent="."]

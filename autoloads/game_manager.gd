@@ -5,5 +5,3 @@ signal deaths_amount_changed(amount: int)
 signal godocoins_amount_changed(amount: int)
 
 signal dummy_upgrade_learnt()
-
-var dummy: Dummy

@@ -4,7 +4,7 @@ extends PurchasableItem
 # Order of elements must correspond to order of scenes in BuildingGrid tile map layer in the main scene.
 enum BuildingType {
 	TURRET,
-	SPIKES,
+	MACHINE_GUN,
 }
 
 @export var building_type: BuildingType

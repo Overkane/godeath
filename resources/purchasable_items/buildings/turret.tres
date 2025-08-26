@@ -7,7 +7,7 @@
 script = ExtResource("1_dv12n")
 building_type = 0
 item_name = "Turret"
-item_description = "Shoots projectiles."
+item_description = "Shoots projectiles. Damage 1."
 item_icon = ExtResource("1_sto2l")
 death_requirement = 0
 godocoins_cost = 5

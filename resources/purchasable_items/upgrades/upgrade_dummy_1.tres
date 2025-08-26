@@ -7,8 +7,8 @@
 script = ExtResource("1_6ebp1")
 upgrade_type = 2
 item_name = "Dummy Upgrade"
-item_description = "Upgrades dummy stat by X."
+item_description = "Upgrades dummy hp by 10. Adds 1 additional death per dummy kill."
 item_icon = ExtResource("1_tv3dy")
 death_requirement = 10
-godocoins_cost = 5
+godocoins_cost = 20
 metadata/_custom_type_script = "uid://dmx52mv6kbqlw"

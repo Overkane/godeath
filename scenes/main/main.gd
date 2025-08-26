@@ -4,9 +4,11 @@ extends Node2D
 signal bad_ending_triggered
 signal good_ending_triggered
 
-const DEATHS_AMOUNT_TO_WIN := 1000
+const DEATHS_AMOUNT_TO_WIN := 500
 const BUILDINGS_SOURCE_ID := 0
+const DUMMY_SPAWNER = preload("res://scenes/spawner/dummy_spawner.tscn")
 
+static var dummy_kill_value := 1
 var deaths_amount: int = 0:
 	set(value):
 		deaths_amount = value
@@ -35,8 +37,8 @@ var tile_prices: Dictionary[Vector2i, int]
 @onready var peace_timer: Timer = $Game/PeaceTimer
 @onready var game: Node2D = $Game
 @onready var ending_player: AnimationPlayer = $EndingPlayer
-@onready var dummy_spawner_2: DummySpawner = $Game/DummySpawner2
-@onready var dummy_spawner_3: DummySpawner = $Game/DummySpawner3
+@onready var addional_spawner_pos: Marker2D = $Game/AddionalSpawnerPos
+@onready var addional_spawner_pos_2: Marker2D = $Game/AddionalSpawnerPos2
 
 
 func _ready() -> void:
@@ -81,10 +83,16 @@ func _input(event: InputEvent) -> void:
 
 
 func _spawn_additional_dummy() -> void:
-	if dummy_spawner_2.process_mode == Node.PROCESS_MODE_DISABLED:
-		dummy_spawner_2.process_mode = Node.PROCESS_MODE_INHERIT
+	if addional_spawner_pos != null:
+		var dummy_spawner: DummySpawner = DUMMY_SPAWNER.instantiate()
+		add_child(dummy_spawner)
+		dummy_spawner.global_position = addional_spawner_pos.global_position
+		addional_spawner_pos.queue_free()
 	else:
-		dummy_spawner_3.process_mode = Node.PROCESS_MODE_INHERIT
+		var dummy_spawner: DummySpawner = DUMMY_SPAWNER.instantiate()
+		add_child(dummy_spawner)
+		dummy_spawner.global_position = addional_spawner_pos_2.global_position
+		addional_spawner_pos_2.queue_free()
 
 func _start_good_ending() -> void:
 	game.process_mode = PROCESS_MODE_DISABLED
@@ -115,4 +123,4 @@ func _on_dummy_took_damage(amount: int) -> void:
 	godocoins_amount += amount
 
 func _on_dummy_died() -> void:
-	deaths_amount += 1
+	deaths_amount += dummy_kill_value
